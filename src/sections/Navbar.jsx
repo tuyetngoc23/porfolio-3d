@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { navLinks } from "../constants/index";
 
 const NavItem = () => {
   return (
     <ul className="nav-ul">
-      {["Home", "About", "Projects", "Contact"].map((item, index) => {
+      {navLinks.map((item) => {
         return (
-          <li key={index} className="nav-li">
-            <a href="/" className="nav-li_a">
-              {item}
+          <li key={item.id} className="nav-li">
+            <a href="/" className="nav-li_a" onClick={() => {}}>
+              {item.name}
             </a>
           </li>
         );
@@ -34,7 +35,7 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             <img
-              src={isOpen ? "assets/menu.svg" : "assets/close.svg"}
+              src={!isOpen ? "assets/menu.svg" : "assets/close.svg"}
               alt="toggle"
               className="w-6 h-6"
             />
@@ -43,6 +44,11 @@ const Navbar = () => {
             <NavItem />
           </nav>
         </div>
+      </div>
+      <div className={`nav-sidebar ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
+        <nav className="p-5">
+          <NavItem/>
+        </nav>
       </div>
     </header>
   );
