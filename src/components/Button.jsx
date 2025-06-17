@@ -1,3 +1,4 @@
+// eslint-disable-next-line react/prop-types
 const Button = ({ name, isBeam = false, containerClass }) => {
   return (
     <button className={`btn ${containerClass}`}>
