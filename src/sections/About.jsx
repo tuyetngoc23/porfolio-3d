@@ -52,12 +52,18 @@ const About = () => {
                 I work remotely accross most timezones.
               </p>
               <p className="grid-subtext">
-                I&apos;m based in Croatia, with remote work available.
+                I&apos;m based in Vietnam, with remote work available.
               </p>
               <Button
                 name={"Contact Me"}
                 isBeam
                 containerClass={"w-full mt-10"}
+                onClick={() => {
+                  window.scrollTo({
+                    behavior: "smooth",
+                    top: document.getElementById("contact").scrollIntoView(),
+                  });
+                }}
               />
             </div>
           </div>

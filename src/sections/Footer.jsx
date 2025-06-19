@@ -10,13 +10,28 @@ const Footer = () => {
       </div>
       <div className="flex gap-3">
         <div className="social-icon">
-          <img src="/assets/github.svg" alt="github" className="w-1/2 h-1/2" />
+          <a
+            href="https://github.com/tuyetngoc23"
+            target="_blank"
+            rel="noreferrer"
+            className="w-1/2 h-1/2"
+          >
+            <img src="/assets/github.svg" alt="github" />
+          </a>
         </div>
         <div className="social-icon">
-          <img src="/assets/twitter.svg" alt="twitter" className="w-1/2 h-1/2" />
+          <img
+            src="/assets/twitter.svg"
+            alt="twitter"
+            className="w-1/2 h-1/2"
+          />
         </div>
         <div className="social-icon">
-          <img src="/assets/instagram.svg" alt="instagram" className="w-1/2 h-1/2" />
+          <img
+            src="/assets/instagram.svg"
+            alt="instagram"
+            className="w-1/2 h-1/2"
+          />
         </div>
       </div>
       <p className="text-[#62646C]">© 2025 Ngoc. All right reserved</p>

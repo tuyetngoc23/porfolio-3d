@@ -7,7 +7,7 @@ const NavItem = () => {
       {navLinks.map((item) => {
         return (
           <li key={item.id} className="nav-li">
-            <a href="/" className="nav-li_a" onClick={() => {}}>
+            <a href={item.href} className="nav-li_a">
               {item.name}
             </a>
           </li>
@@ -27,7 +27,7 @@ const Navbar = () => {
             href="/"
             className="text-neutral-400 font-bold text-xl hover:text-white transition-colors"
           >
-            Adrian
+            Ngoc
           </a>
           <button
             onClick={toggleMenu}

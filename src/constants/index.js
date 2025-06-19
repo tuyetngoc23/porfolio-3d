@@ -260,36 +260,36 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
 export const workExperiences = [
   {
     id: 1,
-    name: 'Framer',
-    pos: 'Lead Web Developer',
-    duration: '2022 - Present',
-    title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-    icon: '/assets/framer.svg',
+    name: 'Lotte Innnovate',
+    pos: 'Frontend Developer',
+    duration: '2021 - Present',
+    title: "As a Frontend Developer at Lotte Innovate Vietnam, I was primarily responsible for developing and maintaining web applications using React and TypeScript. My role involved building scalable UI components, integrating APIs, and ensuring responsive, accessible designs across multiple projects. I worked closely with cross-functional teams, applying best practices in code structure, performance optimization, and state management using Redux,.... This experience significantly strengthened my ability to deliver production-ready features in a fast-paced, Agile environment.",
+    icon: '/assets/logo-lotte.png',
     animation: 'victory',
   },
   {
     id: 2,
-    name: 'Figma',
-    pos: 'Web Developer',
-    duration: '2020 - 2022',
-    title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-    icon: '/assets/figma.svg',
+    name: 'HCMC Open Univesery',
+    pos: 'Student',
+    duration: '2018 - 2022',
+    title: "Participated in team-based academic projects focusing on web development fundamentals and software engineering principles. Developed several mini-projects including personal portfolio sites, CRUD applications, and basic UI components using HTML, CSS, JavaScript, and React. Gained foundational experience in version control (Git), teamwork, and task management through group assignments. Received positive feedback from lecturers for project quality and active collaboration.",
+    icon: '/assets/logo-dai-hoc-mo.png',
     animation: 'clapping',
   },
-  {
-    id: 3,
-    name: 'Notion',
-    pos: 'Junior Web Developer',
-    duration: '2019 - 2020',
-    title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-    icon: '/assets/notion.svg',
-    animation: 'salute',
-  },
+  // {
+  //   id: 3,
+  //   name: 'Notion',
+  //   pos: 'Junior Web Developer',
+  //   duration: '2019 - 2020',
+  //   title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
+  //   icon: '/assets/notion.svg',
+  //   animation: 'salute',
+  // },
 ];
 
 export const aboutMe = [
   {
-    id: 1, imageSrc: '/assets/grid1.png', alt: 'grid1', headText: "Hi, I'm Ngoc", subText: "With 12 years of experience, I have honed my skills in frontend and backend development, with a focus on animated 3D websites."
+    id: 1, imageSrc: '/assets/grid1.png', alt: 'grid1', headText: "Hi, I'm Ngoc", subText: "With 3+ YoE , I have honed my skills in web frontend development, with focus on React and Typescript."
   },
   {
     id: 2, imageSrc: '/assets/grid2.png', alt: 'grid2', headText: "Tech Stack", subText: "I specialize in Javascript/Typescript with a focus on React and Next.js ecosystems."
