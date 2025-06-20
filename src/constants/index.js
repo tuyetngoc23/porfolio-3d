@@ -58,6 +58,43 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: 'Glotoss PMS - Work Management Platform',
+    desc: 'Glotoss PMS is a cutting-edge Software-as-a-Service platform that redefines workflow management. Designed with scalability and automation in mind, it empowers teams to streamline complex processes, assign tasks efficiently, and gain real-time visibility into every stage of their operations — all from a centralized, user-friendly dashboard.',
+    subdesc:
+      'Built as a unique Software-as-a-Service app with Vite, Tailwind CSS, TypeScript, Glotoss is designed for optimal performance and scalability.',
+    href: 'https://pms.glotoss.com',
+    texture: '/textures/project/project1.mp4',
+    logo: '/assets/project-glotoss.svg',
+    logoStyle: {
+      backgroundColor: '#2A1816',
+      border: '0.2px solid #36201D',
+      boxShadow: '0px 0px 60px 0px #AA3C304D',
+    },
+    spotlight: '/assets/spotlight1.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 4,
+        name: 'Vite',
+        path: '/vite.svg',
+      },
+    ],
+  },
+  {
     title: 'Podcastr - AI Podcast Platform',
     desc: 'Podcastr is a revolutionary Software-as-a-Service platform that transforms the way podcasts are created. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
     subdesc:
