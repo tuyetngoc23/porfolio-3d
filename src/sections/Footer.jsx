@@ -16,19 +16,19 @@ const Footer = () => {
             rel="noreferrer"
             className="w-1/2 h-1/2"
           >
-            <img src="/assets/github.svg" alt="github" />
+            <img src="/porfolio-3d/assets/github.svg" alt="github" />
           </a>
         </div>
         <div className="social-icon">
           <img
-            src="/assets/twitter.svg"
+            src="/porfolio-3d/assets/twitter.svg"
             alt="twitter"
             className="w-1/2 h-1/2"
           />
         </div>
         <div className="social-icon">
           <img
-            src="/assets/instagram.svg"
+            src="/porfolio-3d/assets/instagram.svg"
             alt="instagram"
             className="w-1/2 h-1/2"
           />

@@ -66,7 +66,7 @@ const Project = () => {
               rel="noreferrer"
             >
               <p>Check Live Site</p>
-              <img src="/assets/arrow-up.png" className="w-3 h-3" alt="arrow" />
+              <img src="/porfolio-3d/assets/arrow-up.png" className="w-3 h-3" alt="arrow" />
             </a>
           </div>
           <div className="flex justify-between items-center mt-7">
@@ -75,7 +75,7 @@ const Project = () => {
               onClick={() => handleNavigation("previous")}
             >
               <img
-                src="/assets/left-arrow.png"
+                src="/porfolio-3d/assets/left-arrow.png"
                 alt="left arrow"
                 className="w-4 h-4"
               />
@@ -85,7 +85,7 @@ const Project = () => {
               onClick={() => handleNavigation("next")}
             >
               <img
-                src="/assets/right-arrow.png"
+                src="/porfolio-3d/assets/right-arrow.png"
                 alt="right arrow"
                 className="w-4 h-4"
               />

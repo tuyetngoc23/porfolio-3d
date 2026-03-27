@@ -9,17 +9,17 @@ import { useEffect } from "react";
 const Developer = ({ animationName = "idle", ...props }) => {
   const group = useRef();
   const { nodes, materials } = useGLTF(
-    "/models/animations/developer.glb"
+    "/porfolio-3d/models/animations/developer.glb"
   );
-  const { animations: idleAnimation } = useFBX("/models/animations/idle.fbx");
+  const { animations: idleAnimation } = useFBX("/porfolio-3d/models/animations/idle.fbx");
   const { animations: saluteAnimation } = useFBX(
-    "/models/animations/salute.fbx"
+    "/porfolio-3d/models/animations/salute.fbx"
   );
   const { animations: clappingAnimation } = useFBX(
-    "/models/animations/clapping.fbx"
+    "/porfolio-3d/models/animations/clapping.fbx"
   );
   const { animations: victoryAnimation } = useFBX(
-    "/models/animations/victory.fbx"
+    "/porfolio-3d/models/animations/victory.fbx"
   );
 
   idleAnimation[0].name = "idle";
@@ -105,5 +105,5 @@ const Developer = ({ animationName = "idle", ...props }) => {
   );
 };
 
-useGLTF.preload("/models/animations/developer.glb");
+useGLTF.preload("/porfolio-3d/models/animations/developer.glb");
 export default Developer;

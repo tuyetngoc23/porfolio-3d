@@ -28,7 +28,7 @@ const Clients = () => {
                     return (
                       <img
                         key={index}
-                        src="/assets/star.png"
+                        src="/porfolio-3d/assets/star.png"
                         alt="star"
                         className="w-5 h-5"
                       />

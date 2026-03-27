@@ -10,9 +10,9 @@ import { useEffect } from "react";
 
 const DemoComputer = (props) => {
   const group = useRef();
-  const { nodes, materials } = useGLTF("/models/computer.glb");
+  const { nodes, materials } = useGLTF("/porfolio-3d/models/computer.glb");
   const txt = useVideoTexture(
-    props?.texture ? props?.texture : "/textures/project/project1.mp4"
+    props?.texture ? props?.texture : "/porfolio-3d/textures/project/project1.mp4"
   );
   useEffect(() => {
     if (txt) {
@@ -1016,5 +1016,5 @@ const DemoComputer = (props) => {
   );
 };
 
-useGLTF.preload("/models/computer.glb");
+useGLTF.preload("/porfolio-3d/models/computer.glb");
 export default DemoComputer;
