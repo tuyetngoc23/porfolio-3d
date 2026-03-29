@@ -16,8 +16,8 @@ const Contact = () => {
     try {
       //service_2o5dv3d
       await emailjs.send(
-        "service_2o5dv3d",
-        "template_1its7qk",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
           to_name: "Ngoc",
@@ -25,7 +25,7 @@ const Contact = () => {
           to_email: "huynhngoc822870@gmail.com",
           message: form.message,
         },
-        "Q7JHFtGkuHwRh-4Ze"
+        import.meta.env.VITE_EMAILJS_USER_ID
       );
       setLoading(false);
       alert("Your message has been sent.");
@@ -53,7 +53,7 @@ const Contact = () => {
           <p className="text-lg mt-3 text-[#AFB0B6]">
             Whether you&apos;re looking to build a new website, improve your
             existing platform, or bring a unique project to life, I&apos;m here
-            to help.
+            to help. Or if you just have a job for me, let me know!
           </p>
           <form
             ref={formRef}

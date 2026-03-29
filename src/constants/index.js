@@ -313,20 +313,11 @@ export const workExperiences = [
     icon: '/porfolio-3d/assets/logo-dai-hoc-mo.png',
     animation: 'clapping',
   },
-  // {
-  //   id: 3,
-  //   name: 'Notion',
-  //   pos: 'Junior Web Developer',
-  //   duration: '2019 - 2020',
-  //   title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-  //   icon: '/porfolio-3d/assets/notion.svg',
-  //   animation: 'salute',
-  // },
 ];
 
 export const aboutMe = [
   {
-    id: 1, imageSrc: '/porfolio-3d/assets/grid1.png', alt: 'grid1', headText: "Hi, I'm Ngoc", subText: "With 3+ YoE , I have honed my skills in web frontend development, with focus on React and Typescript."
+    id: 1, imageSrc: '/porfolio-3d/assets/grid1.png', alt: 'grid1', headText: "Hi, I'm Ngoc", subText: "With 4+ YoE , I have honed my skills in web frontend development, with focus on React and Typescript."
   },
   {
     id: 2, imageSrc: '/porfolio-3d/assets/grid2.png', alt: 'grid2', headText: "Tech Stack", subText: "I specialize in Javascript/Typescript with a focus on React and Next.js ecosystems."
