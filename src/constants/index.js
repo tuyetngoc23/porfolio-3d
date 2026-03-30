@@ -1,3 +1,5 @@
+import { renderDefaultProjectLogo, renderDefaultProjectSpotlight } from '../utils/helper';
+
 export const navLinks = [
   {
     id: 1,
@@ -59,18 +61,18 @@ export const clientReviews = [
 export const myProjects = [
   {
     title: 'OPL - E-commerce Platform',
-    desc: 'OPL is a revolutionary Software-as-a-Service platform that transforms the way e-commerce is done. With advanced AI-powered features like text-to-multiple-voices functionality, it allows creators to generate diverse voiceovers from a single text input.',
+    desc: 'OPL is a E-commerce Platform with 2 site for Seller Merchant and Customer help people to buy and sell product easily.',
     subdesc:
-      'Built as a unique Software-as-a-Service app with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Convex, OPL is designed for optimal performance and scalability.',
+      'Built as a unique Software-as-a-Service app with Next.js 15, Tailwind CSS, TypeScript, Ant Design, Zustand for handle state and React Query for handle data fetching, OPL is designed for optimal performance and scalability.',
     href: '',
     texture: '/porfolio-3d/textures/project/project2.mp4',
-    logo: '/porfolio-3d/assets/project-logo1.png',
+    logo: renderDefaultProjectLogo(),
     logoStyle: {
       backgroundColor: '#2A1816',
       border: '0.2px solid #36201D',
       boxShadow: '0px 0px 60px 0px #AA3C304D',
     },
-    spotlight: '/porfolio-3d/assets/spotlight1.png',
+    spotlight: renderDefaultProjectSpotlight(),
     tags: [
       {
         id: 1,
@@ -89,8 +91,23 @@ export const myProjects = [
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/porfolio-3d/assets/framer.png',
+        name: 'Ant Design',
+        path: '/porfolio-3d/assets/ant-design.png',
+      },
+      {
+        id: 5,
+        name: 'Zustand',
+        path: '/porfolio-3d/assets/zustand.png',
+      },
+      {
+        id: 6,
+        name: 'React Query',
+        path: '/porfolio-3d/assets/react-query.png',
+      },
+      {
+        id: 7,
+        name: 'Next.js',
+        path: '/porfolio-3d/assets/nextjs.png',
       },
     ],
   },
@@ -98,7 +115,7 @@ export const myProjects = [
     title: 'Glotoss PMS - Work Management Platform',
     desc: 'Glotoss PMS is a cutting-edge Software-as-a-Service platform that redefines workflow management. Designed with scalability and automation in mind, it empowers teams to streamline complex processes, assign tasks efficiently, and gain real-time visibility into every stage of their operations — all from a centralized, user-friendly dashboard.',
     subdesc:
-      'Built as a unique Software-as-a-Service app with Vite, Tailwind CSS, TypeScript, Glotoss is designed for optimal performance and scalability.',
+      'Built as a unique Software-as-a-Service app with Vite, Tailwind CSS, TypeScript, React Query, React Router, Shadcn/ui, Tanstack and Zustand, Glotoss is designed for optimal performance and scalability.',
     href: 'https://pms.glotoss.com',
     texture: '/porfolio-3d/textures/project/project1.mp4',
     logo: '/porfolio-3d/assets/project-glotoss.svg',
@@ -107,7 +124,7 @@ export const myProjects = [
       border: '0.2px solid #36201D',
       boxShadow: '0px 0px 60px 0px #AA3C304D',
     },
-    spotlight: '/porfolio-3d/assets/spotlight1.png',
+    spotlight: renderDefaultProjectSpotlight(),
     tags: [
       {
         id: 1,
@@ -128,6 +145,63 @@ export const myProjects = [
         id: 4,
         name: 'Vite',
         path: '/porfolio-3d/vite.svg',
+      },
+      {
+        id: 5,
+        name: 'Shadcn/ui',
+        path: '/porfolio-3d/assets/shadcn-ui.png',
+      },
+      {
+        id: 6,
+        name: 'Tanstack',
+        path: '/porfolio-3d/assets/tanstack.png',
+      },
+      {
+        id: 7,
+        name: 'Zustand',
+        path: '/porfolio-3d/assets/zustand.png',
+      },
+    ],
+  },
+  {
+    title: 'Lotte Mart VN - E-commerce Platform',
+    desc: 'Lotte Mart VN is a E-commerce Platform help people to buy product easily. Support multi language for Korean, Vietnamese, English.',
+    subdesc:
+      ' Developed a e-commerce platform using such as React, React Router, Redux with some feature like product list, detail, recommend, review, rating. Fixing bugs to meet project deadlines and sending daily reports to team leader and manager. Integrated web UI with multiples languages and responsive for multi devices. Integrated backend services using REST API to enable data comunication between frontend and server.',
+    href: '',
+    texture: '/porfolio-3d/textures/project/project2.mp4',
+    logo: '/porfolio-3d/assets/logo-lotte-mart.png',
+    logoStyle: {
+      backgroundColor: '#2A1816',
+      border: '0.2px solid #36201D',
+      boxShadow: '0px 0px 60px 0px #AA3C304D',
+    },
+    spotlight: renderDefaultProjectSpotlight(),
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/porfolio-3d/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'TypeScript',
+        path: '/porfolio-3d/assets/typescript.png',
+      },
+      {
+        id: 3,
+        name: 'Redux',
+        path: '/porfolio-3d/assets/redux.png',
+      },
+      {
+        id: 4,
+        name: 'React Router',
+        path: '/porfolio-3d/assets/react-router.png',
+      },
+      {
+        id: 5,
+        name: 'Next.js',
+        path: '/porfolio-3d/assets/nextjs.png',
       },
     ],
   },

@@ -20,18 +20,14 @@ const Footer = () => {
           </a>
         </div>
         <div className="social-icon">
-          <img
-            src="/porfolio-3d/assets/twitter.svg"
-            alt="twitter"
+          <a
+            href="https://www.linkedin.com/in/ngoc-huynh-1a4442317"
+            target="_blank"
+            rel="noreferrer"
             className="w-1/2 h-1/2"
-          />
-        </div>
-        <div className="social-icon">
-          <img
-            src="/porfolio-3d/assets/instagram.svg"
-            alt="instagram"
-            className="w-1/2 h-1/2"
-          />
+          >
+            <img src="/porfolio-3d/assets/linkedin.png" alt="linkedin"/>
+          </a>
         </div>
       </div>
       <p className="text-[#62646C]">© 2025 Ngoc. All right reserved</p>

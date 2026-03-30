@@ -27,8 +27,8 @@ export default {
         },
       },
       backgroundImage: {
-        terminal: "url('/assets/terminal.png')",
-        gray_gradient: 'linear-gradient(to right, #aaa, #ccc)', 
+        terminal: "url('/porfolio-3d/assets/terminal.png')",
+        gray_gradient: 'linear-gradient(to right, #aaa, #ccc)',
       },
     },
   },
