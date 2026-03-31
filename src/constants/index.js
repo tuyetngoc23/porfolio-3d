@@ -169,7 +169,7 @@ export const myProjects = [
     subdesc:
       ' Developed a e-commerce platform using such as React, React Router, Redux with some feature like product list, detail, recommend, review, rating. Fixing bugs to meet project deadlines and sending daily reports to team leader and manager. Integrated web UI with multiples languages and responsive for multi devices. Integrated backend services using REST API to enable data comunication between frontend and server.',
     href: '',
-    texture: '/porfolio-3d/textures/project/project2.mp4',
+    texture: '/porfolio-3d/textures/project/project3.mp4',
     logo: '/porfolio-3d/assets/logo-lotte-mart.png',
     logoStyle: {
       backgroundColor: '#2A1816',
