@@ -6,6 +6,7 @@ import Footer from "./sections/Footer";
 import Hero from "./sections/Hero";
 import Navbar from "./sections/Navbar";
 import Project from "./sections/Project";
+import Chatbot from "./components/Chatbot";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <Experience />
       <Contact />
       <Footer />
+      <Chatbot />
     </main>
   );
 };
