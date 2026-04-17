@@ -12,7 +12,7 @@ const Developer = ({ animationName = "idle", ...props }) => {
   const { nodes, materials } = useGLTF(
     "/porfolio-3d/models/animations/developer.glb"
   );
-  const { animations: idleAnimation } = useFBX("/porfolio-3d/models/animations/idle2.fbx");
+  const { animations: idleAnimation } = useFBX("/porfolio-3d/models/animations/idle.fbx");
   const { animations: saluteAnimation } = useFBX(
     "/porfolio-3d/models/animations/salute.fbx"
   );

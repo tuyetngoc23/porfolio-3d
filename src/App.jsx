@@ -1,25 +1,27 @@
-import About from "./sections/About";
-import Clients from "./sections/Clients";
-import Contact from "./sections/Contact";
-import Experience from "./sections/Experience";
-import Footer from "./sections/Footer";
+import { lazy, Suspense } from "react";
 import Hero from "./sections/Hero";
 import Navbar from "./sections/Navbar";
-import Project from "./sections/Project";
-import Chatbot from "./components/Chatbot";
+
+const About = lazy(() => import("./sections/About"));
+const Contact = lazy(() => import("./sections/Contact"));
+const Experience = lazy(() => import("./sections/Experience"));
+const Footer = lazy(() => import("./sections/Footer"));
+const Project = lazy(() => import("./sections/Project"));
+const Chatbot = lazy(() => import("./components/Chatbot"));
 
 const App = () => {
   return (
     <main className="max-w-7xl mx-auto">
       <Navbar />
       <Hero />
-      <About />
-      <Project />
-      {/* <Clients /> */}
-      <Experience />
-      <Contact />
-      <Footer />
-      <Chatbot />
+      <Suspense fallback={<div className="min-h-screen" />}>
+        <About />
+        <Project />
+        <Experience />
+        <Contact />
+        <Footer />
+        <Chatbot />
+      </Suspense>
     </main>
   );
 };
