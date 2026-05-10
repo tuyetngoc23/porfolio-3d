@@ -547,6 +547,11 @@ body {
     padding-right: 2.5rem;
   }
 }
+@media (min-width: 1400px) and (max-width: 1500px){
+  .contact-container{
+    margin-top: 5rem;
+  }
+}
 
 .field-label {
   font-size: 1.125rem;

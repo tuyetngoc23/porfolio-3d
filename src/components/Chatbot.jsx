@@ -14,6 +14,7 @@ const Chatbot = () => {
   ]);
   const [input, setInput] = useState("");
   const [index, setIndex] = useState(0);
+  const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
   const toggleChat = () => setIsOpen(!isOpen);
@@ -48,24 +49,22 @@ const Chatbot = () => {
     }
   }
 
-  const sendMessage = (e) => {
+  const sendMessage = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
 
-    // Add user message
     setMessages((prev) => [...prev, { text: input, sender: "user" }]);
     setInput("");
-    const response = main(input);
-    // Simulate bot response
-    setTimeout(() => {
-      setMessages((prev) => [
-        ...prev,
-        {
-          text: response,
-          sender: "bot",
-        },
-      ]);
-    }, 1000);
+    setLoading(true);
+    const response = await main(input);
+    setMessages((prev) => [
+      ...prev,
+      {
+        text: response,
+        sender: "bot",
+      },
+    ]);
+    setLoading(false);
   };
 
   return (
@@ -116,7 +115,14 @@ const Chatbot = () => {
         </div>
 
         {/* Input Area */}
-        <div className="p-3 bg-white/5 shrink-0 border-t border-white/10">
+        <div className="p-3 bg-white/5 shrink-0 border-t border-white/10 relative">
+          {loading && (
+            <div className="absolute left-0 -top-6 flex items-center gap-1 pl-2">
+              <span className="inline-block w-2 h-2 bg-white/70 rounded-full animate-bounce" style={{animationDelay: '0s'}}></span>
+              <span className="inline-block w-2 h-2 bg-white/70 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></span>
+              <span className="inline-block w-2 h-2 bg-white/70 rounded-full animate-bounce" style={{animationDelay: '0.4s'}}></span>
+            </div>
+          )}
           <form onSubmit={sendMessage} className="flex gap-2 relative">
             <input
               type="text"
