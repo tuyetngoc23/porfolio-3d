@@ -1,5 +1,3 @@
-import React from "react";
-
 const Footer = () => {
   return (
     <section className="c-space pt-7 pb-3 border-t border-[#1C1C21] flex justify-between items-center flex-wrap gap-5">
@@ -26,7 +24,7 @@ const Footer = () => {
             rel="noreferrer"
             className="w-1/2 h-1/2"
           >
-            <img src="/porfolio-3d/assets/linkedin.png" alt="linkedin"/>
+            <img src="/porfolio-3d/assets/linkedin.png" alt="linkedin" />
           </a>
         </div>
       </div>

@@ -547,7 +547,7 @@ body {
     padding-right: 2.5rem;
   }
 }
-@media (min-width: 1400px) and (max-width: 1500px){
+@media (min-width: 1400px) and (max-width: 1600px){
   .contact-container{
     margin-top: 5rem;
   }

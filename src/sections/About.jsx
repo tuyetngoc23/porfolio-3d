@@ -1,17 +1,26 @@
 import Globe from "react-globe.gl";
 import { aboutMe } from "../constants";
 import Button from "../components/Button";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
+  const timeoutRef = useRef(null);
+
   const handleCopy = () => {
     navigator.clipboard.writeText("huynhngoc822870@gmail.com");
     setHasCopied(true);
-    setTimeout(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
       setHasCopied(false);
     }, 2000);
   };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
   return (
     <section id="about" className="c-space my-20">
       <div className="grid xl:grid-cols-3 xl: grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">

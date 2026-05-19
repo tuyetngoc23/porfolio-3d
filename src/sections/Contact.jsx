@@ -1,6 +1,4 @@
-import React from "react";
-import { useState } from "react";
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
@@ -25,7 +23,7 @@ const Contact = () => {
           to_email: "huynhngoc822870@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_EMAILJS_USER_ID
+        import.meta.env.VITE_EMAILJS_USER_ID,
       );
       setLoading(false);
       alert("Your message has been sent.");

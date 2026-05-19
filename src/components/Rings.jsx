@@ -2,10 +2,11 @@
 import { useGSAP } from "@gsap/react";
 import { useTexture } from "@react-three/drei";
 import gsap from "gsap";
-import { useCallback, useRef } from "react";
+import { useCallback, useRef, useEffect } from "react";
 
 const Rings = ({ position }) => {
   const refList = useRef([]);
+  const timelineRef = useRef(null);
   const getRef = useCallback((mesh) => {
     if (mesh && !refList.current.includes(mesh)) {
       refList.current.push(mesh);
@@ -14,15 +15,30 @@ const Rings = ({ position }) => {
 
   const texture = useTexture("/porfolio-3d/textures/rings.png");
 
+  useEffect(() => {
+    return () => {
+      if (timelineRef.current) {
+        timelineRef.current.kill();
+        timelineRef.current = null;
+      }
+      texture?.dispose();
+    };
+  }, [texture]);
+
   useGSAP(
     () => {
       if (refList.current.length === 0) return;
-      console.log(position);
+
+      // Kill existing timeline before creating new one
+      if (timelineRef.current) {
+        timelineRef.current.kill();
+      }
+
       refList.current.forEach((r) => {
         r.position.set(position[0], position[1], position[2]);
       });
 
-      gsap
+      timelineRef.current = gsap
         .timeline({
           repeat: -1,
           repeatDelay: 0.5,
@@ -38,9 +54,15 @@ const Rings = ({ position }) => {
             },
           }
         );
+      return () => {
+        if (timelineRef.current) {
+          timelineRef.current.kill();
+          timelineRef.current = null;
+        }
+      };
     },
     {
-      dependencies: position,
+      dependencies: [position],
     }
   );
 

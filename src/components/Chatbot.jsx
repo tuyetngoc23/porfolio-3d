@@ -1,12 +1,18 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { GoogleGenAI } from "@google/genai";
 import { systemPrompt, textModels } from "../constants";
 import { MessageIcon } from "./icons/chatbox/MessageIcon";
 import { ArrowIcon } from "./icons/chatbox/ArrowIcon";
 import { CloseIcon } from "./icons/chatbox/CloseIcon";
 
+const MAX_MESSAGES = 50;
+
 const Chatbot = () => {
-  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+  // Memoize AI instance to prevent recreation on every render
+  const ai = useMemo(
+    () => new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY }),
+    [],
+  );
 
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -16,6 +22,11 @@ const Chatbot = () => {
   const [index, setIndex] = useState(0);
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef(null);
+
+  const isDisabled = useMemo(
+    () => messages.length >= MAX_MESSAGES,
+    [messages.length],
+  );
 
   const toggleChat = () => setIsOpen(!isOpen);
 
@@ -27,7 +38,7 @@ const Chatbot = () => {
     if (isOpen) {
       scrollToBottom();
     }
-  }, [messages, isOpen]);
+  }, [isOpen]);
 
   async function main(prompt) {
     try {
@@ -53,17 +64,25 @@ const Chatbot = () => {
     e.preventDefault();
     if (!input.trim()) return;
 
-    setMessages((prev) => [...prev, { text: input, sender: "user" }]);
+    setMessages((prev) => {
+      const newMessages = [...prev, { text: input, sender: "user" }];
+      // Keep only last MAX_MESSAGES
+      return newMessages.slice(-MAX_MESSAGES);
+    });
     setInput("");
     setLoading(true);
     const response = await main(input);
-    setMessages((prev) => [
-      ...prev,
-      {
-        text: response,
-        sender: "bot",
-      },
-    ]);
+    setMessages((prev) => {
+      const newMessages = [
+        ...prev,
+        {
+          text: response,
+          sender: "bot",
+        },
+      ];
+      // Keep only last MAX_MESSAGES
+      return newMessages.slice(-MAX_MESSAGES);
+    });
     setLoading(false);
   };
 
@@ -118,9 +137,18 @@ const Chatbot = () => {
         <div className="p-3 bg-white/5 shrink-0 border-t border-white/10 relative">
           {loading && (
             <div className="absolute left-0 -top-6 flex items-center gap-1 pl-2">
-              <span className="inline-block w-2 h-2 bg-white/70 rounded-full animate-bounce" style={{animationDelay: '0s'}}></span>
-              <span className="inline-block w-2 h-2 bg-white/70 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></span>
-              <span className="inline-block w-2 h-2 bg-white/70 rounded-full animate-bounce" style={{animationDelay: '0.4s'}}></span>
+              <span
+                className="inline-block w-2 h-2 bg-white/70 rounded-full animate-bounce"
+                style={{ animationDelay: "0s" }}
+              ></span>
+              <span
+                className="inline-block w-2 h-2 bg-white/70 rounded-full animate-bounce"
+                style={{ animationDelay: "0.2s" }}
+              ></span>
+              <span
+                className="inline-block w-2 h-2 bg-white/70 rounded-full animate-bounce"
+                style={{ animationDelay: "0.4s" }}
+              ></span>
             </div>
           )}
           <form onSubmit={sendMessage} className="flex gap-2 relative">
@@ -128,7 +156,12 @@ const Chatbot = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Type your message..."
+              placeholder={
+                isDisabled
+                  ? "You reached limit messages"
+                  : "Type your message..."
+              }
+              disabled={isDisabled}
               className="flex-1 bg-white/10 text-white rounded-full pl-4 pr-12 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-white/30 border border-transparent focus:border-white/20 placeholder:text-gray-400 transition-all"
             />
             <button

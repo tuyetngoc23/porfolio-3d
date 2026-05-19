@@ -13,10 +13,14 @@ const Cube = ({ ...props }) => {
   const texture = useTexture("/porfolio-3d/textures/cube.png");
 
   const cubeRef = useRef();
+  const timelineRef = useRef(null);
   const [hovered, setHovered] = useState(false);
 
   useGSAP(() => {
-    gsap
+    if (timelineRef.current) {
+      timelineRef.current.kill();
+    }
+    timelineRef.current = gsap
       .timeline({
         repeat: -1,
         repeatDelay: 0.5,
@@ -29,7 +33,13 @@ const Cube = ({ ...props }) => {
           each: 0.15,
         },
       });
-  });
+    return () => {
+      if (timelineRef.current) {
+        timelineRef.current.kill();
+        timelineRef.current = null;
+      }
+    };
+  }, [hovered]);
 
   return (
     <Float floatIntensity={2}>

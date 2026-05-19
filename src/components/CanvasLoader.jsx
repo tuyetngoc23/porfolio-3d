@@ -1,7 +1,19 @@
 import { Html, useProgress } from "@react-three/drei";
+import { useState, useEffect } from "react";
 
 const CanvasLoader = () => {
   const { progress } = useProgress();
+  // Defer progress update to avoid React 19 concurrent mode warning
+  // This prevents "Cannot update a component while rendering" error
+  const [displayProgress, setDisplayProgress] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDisplayProgress(progress);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [progress]);
+
   return (
     <Html
       as="div"
@@ -22,7 +34,7 @@ const CanvasLoader = () => {
           marginTop: 40,
         }}
       >
-        {progress != 0 ? `${progress.toFixed(2)}` : `Loading...`}
+        {displayProgress !== 0 ? `${displayProgress.toFixed(2)}` : `Loading...`}
       </p>
     </Html>
   );
