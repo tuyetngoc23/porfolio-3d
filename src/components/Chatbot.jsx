@@ -38,7 +38,7 @@ const Chatbot = () => {
     if (isOpen) {
       scrollToBottom();
     }
-  }, [isOpen]);
+  }, [messages, isOpen]);
 
   async function main(prompt) {
     try {
@@ -90,7 +90,7 @@ const Chatbot = () => {
     <div className="fixed bottom-6 right-6 z-50">
       {/* Chat Popup */}
       <div
-        className={`bg-black/80 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl shadow-black/50 w-[340px] h-[450px] flex flex-col mb-4 overflow-hidden transition-all duration-300 origin-bottom-right ${isOpen ? "scale-100 opacity-100" : "scale-75 opacity-0 pointer-events-none"}`}
+        className={`bg-[#0E0E10] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 w-[340px] h-[450px] flex flex-col mb-4 overflow-hidden transition-all duration-300 origin-bottom-right transform will-change-transform ${isOpen ? "scale-100 opacity-100" : "scale-75 opacity-0 pointer-events-none"}`}
       >
         {/* Header */}
         <div className="bg-white/5 p-4 shrink-0 flex justify-between items-center border-b border-white/10">
@@ -162,7 +162,7 @@ const Chatbot = () => {
                   : "Type your message..."
               }
               disabled={isDisabled}
-              className="flex-1 bg-white/10 text-white rounded-full pl-4 pr-12 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-white/30 border border-transparent focus:border-white/20 placeholder:text-gray-400 transition-all"
+              className="flex-1 bg-white/10 text-white rounded-full pl-4 pr-12 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-white/30 border border-transparent focus:border-white/20 placeholder:text-gray-400 transition-colors"
             />
             <button
               type="submit"
